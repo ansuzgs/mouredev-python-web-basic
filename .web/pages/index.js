@@ -69,13 +69,13 @@ export default function Component() {
   {`Twitch`}
 </RadixThemesButton>
   <RadixThemesButton>
-  {`Twitch`}
+  {`Youtube`}
 </RadixThemesButton>
   <RadixThemesButton>
-  {`Twitch`}
+  {`Instagram`}
 </RadixThemesButton>
   <RadixThemesButton>
-  {`Twitch`}
+  {`LinkedIn`}
 </RadixThemesButton>
 </RadixThemesFlex>
 </RadixThemesFlex>
