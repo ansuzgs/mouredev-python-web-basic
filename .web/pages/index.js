@@ -4,8 +4,9 @@
 import { Fragment, useContext } from "react"
 import { EventLoopContext } from "/utils/context"
 import { Event, getBackendURL, isTrue } from "/utils/state"
-import { Avatar as RadixThemesAvatar, Button as RadixThemesButton, Dialog as RadixThemesDialog, Flex as RadixThemesFlex, Text as RadixThemesText } from "@radix-ui/themes"
+import { Avatar as RadixThemesAvatar, Button as RadixThemesButton, Dialog as RadixThemesDialog, Flex as RadixThemesFlex, Link as RadixThemesLink, Text as RadixThemesText } from "@radix-ui/themes"
 import env from "/env.json"
+import NextLink from "next/link"
 import NextHead from "next/head"
 
 
@@ -65,18 +66,40 @@ export default function Component() {
 </RadixThemesText>
 </RadixThemesFlex>
   <RadixThemesFlex align={`start`} css={{"flexDirection": "column"}} gap={`2`}>
+  <RadixThemesLink asChild={true}>
+  <NextLink css={{"isExternal": true}} href={`https://www.twitch.tv`} passHref={true}>
   <RadixThemesButton>
   {`Twitch`}
 </RadixThemesButton>
+</NextLink>
+</RadixThemesLink>
+  <RadixThemesLink asChild={true}>
+  <NextLink css={{"isExternal": true}} href={`https://www.youtube.com`} passHref={true}>
   <RadixThemesButton>
   {`Youtube`}
 </RadixThemesButton>
+</NextLink>
+</RadixThemesLink>
+  <RadixThemesLink asChild={true}>
+  <NextLink css={{"isExternal": true}} href={`https://www.instagram.com`} passHref={true}>
   <RadixThemesButton>
   {`Instagram`}
 </RadixThemesButton>
+</NextLink>
+</RadixThemesLink>
+  <RadixThemesLink asChild={true}>
+  <NextLink css={{"isExternal": true}} href={`https://www.linkedin.com`} passHref={true}>
   <RadixThemesButton>
   {`LinkedIn`}
 </RadixThemesButton>
+</NextLink>
+</RadixThemesLink>
+</RadixThemesFlex>
+  <RadixThemesFlex align={`start`} css={{"flexDirection": "column"}} gap={`2`}>
+  <img src={`favicon.ico`}/>
+  <RadixThemesText as={`p`}>
+  {`© 2024 Reflex Inc.`}
+</RadixThemesText>
 </RadixThemesFlex>
 </RadixThemesFlex>
   <NextHead>
