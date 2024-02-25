@@ -1,9 +1,41 @@
+from turtle import width
 import reflex as rx
+import python_web.styles.styles as styles
+from python_web.styles.styles import Size
+from python_web.styles.styles import Spacing
 
 
-def link_button(text: str, url: str) -> rx.Component:
+def link_button(title: str, body: str, url: str) -> rx.Component:
     return rx.link(
-        rx.button(text),
+        rx.button(
+            rx.hstack(
+                rx.icon(
+                    tag="arrow-right",
+                    width=styles.Size.BIG.value,
+                    height=styles.Size.BIG.value,
+                    margin=Size.MEDIUM.value,
+                ),
+                rx.vstack(
+                    rx.text(
+                        title,
+                        size=Spacing.SMALL.value,
+                        style=styles.button_title_style,
+                    ),
+                    rx.text(
+                        body,
+                        size=Spacing.VERY_SMALL.value,
+                        style=styles.button_body_style,
+                    ),
+                    align_items="start",
+                    spacing=Spacing.VERY_SMALL.value,
+                    padding_y=Size.SMALL.value,
+                    padding_right=Size.SMALL.value,
+                ),
+                align_items="center",
+                width="100%",
+            ),
+        ),
         href=url,
         is_external=True,
+        width="100%",
     )
