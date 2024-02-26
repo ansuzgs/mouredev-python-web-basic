@@ -1,4 +1,3 @@
-from turtle import width
 import reflex as rx
 import python_web.styles.styles as styles
 from python_web.styles.styles import Size

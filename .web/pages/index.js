@@ -1,43 +1,144 @@
 /** @jsxImportSource @emotion/react */
 
 
-import { Fragment, useContext } from "react"
-import { EventLoopContext } from "/utils/context"
-import { Event, getBackendURL, isTrue } from "/utils/state"
-import { Avatar as RadixThemesAvatar, Box as RadixThemesBox, Button as RadixThemesButton, Dialog as RadixThemesDialog, Flex as RadixThemesFlex, Heading as RadixThemesHeading, Link as RadixThemesLink, Text as RadixThemesText } from "@radix-ui/themes"
-import env from "/env.json"
+import { Fragment } from "react"
+import { Avatar as RadixThemesAvatar, Box as RadixThemesBox, Button as RadixThemesButton, Flex as RadixThemesFlex, Heading as RadixThemesHeading, Link as RadixThemesLink, Text as RadixThemesText } from "@radix-ui/themes"
+import { isTrue } from "/utils/state"
 import NextLink from "next/link"
 import { ArrowRightIcon as LucideArrowRightIcon, LinkIcon as LucideLinkIcon } from "lucide-react"
 import NextHead from "next/head"
 
 
 
-export function Fragment_1762bb90abdb81b879b2a22edbbe01a1 () {
-  const [addEvents, connectError] = useContext(EventLoopContext);
+export function Link_3fc96456b8e52f86388fc39bf4945ffa () {
 
 
   return (
-    <Fragment>
-  {isTrue(connectError !== null) ? (
-  <Fragment>
-  <RadixThemesDialog.Root open={connectError !== null}>
-  <RadixThemesDialog.Content>
-  <RadixThemesDialog.Title>
-  {`Connection Error`}
-</RadixThemesDialog.Title>
-  <RadixThemesText as={`p`}>
-  {`Cannot connect to server: `}
-  {(connectError !== null) ? connectError.message : ''}
-  {`. Check if server is reachable at `}
-  {getBackendURL(env.EVENT).href}
+    <RadixThemesLink asChild={true} css={{"width": "100%", "color": "#C3C7CB", "textDecoration": "none", "&:hover": null}} target={isTrue(true) ? `_blank` : ``}>
+  <NextLink href={`https://www.twitch.tv`} passHref={true}>
+  <RadixThemesButton css={{"width": "100%", "height": "100%", "padding": "0.5em", "borderRadius": "1em", "color": "#F1F2F4", "backgroundColor": "#171F26", "whiteSpace": "normal", "textAlign": "start", "&:hover": {"backgroundColor": "#087ec4"}}}>
+  <RadixThemesFlex align={`start`} css={{"alignItems": "center", "width": "100%", "flexDirection": "row"}} gap={`2`}>
+  <LucideArrowRightIcon css={{"color": "var(--current-color)", "width": "2em", "height": "2em", "margin": "0.8em"}}/>
+  <RadixThemesFlex align={`start`} css={{"alignItems": "start", "paddingTop": "0.5em", "paddingBottom": "0.5em", "paddingRight": "0.5em", "flexDirection": "column"}} gap={`1`}>
+  <RadixThemesText as={`p`} css={{"fontFamily": "Poppins", "fontWeight": "500", "color": "#F1F2F4"}} size={`3`}>
+  {`Twitch`}
 </RadixThemesText>
-</RadixThemesDialog.Content>
-</RadixThemesDialog.Root>
-</Fragment>
-) : (
-  <Fragment/>
-)}
-</Fragment>
+  <RadixThemesText as={`p`} css={{"fontWeight": "300", "color": "#C3C7CB"}} size={`1`}>
+  {`Directos de lunes a viernes`}
+</RadixThemesText>
+</RadixThemesFlex>
+</RadixThemesFlex>
+</RadixThemesButton>
+</NextLink>
+</RadixThemesLink>
+  )
+}
+
+export function Link_e9b3350d880b0721e1aedab1dacfd6a9 () {
+
+
+  return (
+    <RadixThemesLink asChild={true} css={{"width": "100%", "color": "#C3C7CB", "textDecoration": "none", "&:hover": null}} target={isTrue(true) ? `_blank` : ``}>
+  <NextLink href={`https://www.linkedin.com`} passHref={true}>
+  <RadixThemesButton css={{"width": "100%", "height": "100%", "padding": "0.5em", "borderRadius": "1em", "color": "#F1F2F4", "backgroundColor": "#171F26", "whiteSpace": "normal", "textAlign": "start", "&:hover": {"backgroundColor": "#087ec4"}}}>
+  <RadixThemesFlex align={`start`} css={{"alignItems": "center", "width": "100%", "flexDirection": "row"}} gap={`2`}>
+  <LucideArrowRightIcon css={{"color": "var(--current-color)", "width": "2em", "height": "2em", "margin": "0.8em"}}/>
+  <RadixThemesFlex align={`start`} css={{"alignItems": "start", "paddingTop": "0.5em", "paddingBottom": "0.5em", "paddingRight": "0.5em", "flexDirection": "column"}} gap={`1`}>
+  <RadixThemesText as={`p`} css={{"fontFamily": "Poppins", "fontWeight": "500", "color": "#F1F2F4"}} size={`3`}>
+  {`LinkedIn`}
+</RadixThemesText>
+  <RadixThemesText as={`p`} css={{"fontWeight": "300", "color": "#C3C7CB"}} size={`1`}>
+  {`Curriculum actualizado`}
+</RadixThemesText>
+</RadixThemesFlex>
+</RadixThemesFlex>
+</RadixThemesButton>
+</NextLink>
+</RadixThemesLink>
+  )
+}
+
+export function Link_d0cbaff8825b41e853e577157426b615 () {
+
+
+  return (
+    <RadixThemesLink asChild={true} css={{"color": "#C3C7CB", "textDecoration": "none", "&:hover": null}} target={isTrue(true) ? `_blank` : ``}>
+  <NextLink href={`https://google.com`} passHref={true}>
+  <LucideLinkIcon css={{"color": "var(--current-color)"}}/>
+</NextLink>
+</RadixThemesLink>
+  )
+}
+
+export function Link_625e8f976c08324020a7458997310f22 () {
+
+
+  return (
+    <RadixThemesLink asChild={true} css={{"color": "#C3C7CB", "textDecoration": "none", "&:hover": null}} target={isTrue(true) ? `_blank` : ``}>
+  <NextLink href={`https://youtube.com`} passHref={true}>
+  <LucideLinkIcon css={{"color": "var(--current-color)"}}/>
+</NextLink>
+</RadixThemesLink>
+  )
+}
+
+export function Link_f2d73f8d04b6bdf91e717d041b238631 () {
+
+
+  return (
+    <RadixThemesLink asChild={true} css={{"width": "100%", "color": "#C3C7CB", "textDecoration": "none", "&:hover": null}} target={isTrue(true) ? `_blank` : ``}>
+  <NextLink href={`https://www.instagram.com`} passHref={true}>
+  <RadixThemesButton css={{"width": "100%", "height": "100%", "padding": "0.5em", "borderRadius": "1em", "color": "#F1F2F4", "backgroundColor": "#171F26", "whiteSpace": "normal", "textAlign": "start", "&:hover": {"backgroundColor": "#087ec4"}}}>
+  <RadixThemesFlex align={`start`} css={{"alignItems": "center", "width": "100%", "flexDirection": "row"}} gap={`2`}>
+  <LucideArrowRightIcon css={{"color": "var(--current-color)", "width": "2em", "height": "2em", "margin": "0.8em"}}/>
+  <RadixThemesFlex align={`start`} css={{"alignItems": "start", "paddingTop": "0.5em", "paddingBottom": "0.5em", "paddingRight": "0.5em", "flexDirection": "column"}} gap={`1`}>
+  <RadixThemesText as={`p`} css={{"fontFamily": "Poppins", "fontWeight": "500", "color": "#F1F2F4"}} size={`3`}>
+  {`Instagram`}
+</RadixThemesText>
+  <RadixThemesText as={`p`} css={{"fontWeight": "300", "color": "#C3C7CB"}} size={`1`}>
+  {`Fotos nuevas cada semana`}
+</RadixThemesText>
+</RadixThemesFlex>
+</RadixThemesFlex>
+</RadixThemesButton>
+</NextLink>
+</RadixThemesLink>
+  )
+}
+
+export function Link_7d2b5bab88c22b20aeb7948a8557ca4b () {
+
+
+  return (
+    <RadixThemesLink asChild={true} css={{"color": "#C3C7CB", "textDecoration": "none", "&:hover": null}} target={isTrue(true) ? `_blank` : ``}>
+  <NextLink href={`https://twitter.com`} passHref={true}>
+  <LucideLinkIcon css={{"color": "var(--current-color)"}}/>
+</NextLink>
+</RadixThemesLink>
+  )
+}
+
+export function Link_16bc9eb6d7c1a33a357d894b7d80ba29 () {
+
+
+  return (
+    <RadixThemesLink asChild={true} css={{"width": "100%", "color": "#C3C7CB", "textDecoration": "none", "&:hover": null}} target={isTrue(true) ? `_blank` : ``}>
+  <NextLink href={`https://www.youtube.com`} passHref={true}>
+  <RadixThemesButton css={{"width": "100%", "height": "100%", "padding": "0.5em", "borderRadius": "1em", "color": "#F1F2F4", "backgroundColor": "#171F26", "whiteSpace": "normal", "textAlign": "start", "&:hover": {"backgroundColor": "#087ec4"}}}>
+  <RadixThemesFlex align={`start`} css={{"alignItems": "center", "width": "100%", "flexDirection": "row"}} gap={`2`}>
+  <LucideArrowRightIcon css={{"color": "var(--current-color)", "width": "2em", "height": "2em", "margin": "0.8em"}}/>
+  <RadixThemesFlex align={`start`} css={{"alignItems": "start", "paddingTop": "0.5em", "paddingBottom": "0.5em", "paddingRight": "0.5em", "flexDirection": "column"}} gap={`1`}>
+  <RadixThemesText as={`p`} css={{"fontFamily": "Poppins", "fontWeight": "500", "color": "#F1F2F4"}} size={`3`}>
+  {`Youtube`}
+</RadixThemesText>
+  <RadixThemesText as={`p`} css={{"fontWeight": "300", "color": "#C3C7CB"}} size={`1`}>
+  {`Tutoriales semanales`}
+</RadixThemesText>
+</RadixThemesFlex>
+</RadixThemesFlex>
+</RadixThemesButton>
+</NextLink>
+</RadixThemesLink>
   )
 }
 
@@ -45,7 +146,6 @@ export default function Component() {
 
   return (
     <Fragment>
-  <Fragment_1762bb90abdb81b879b2a22edbbe01a1/>
   <RadixThemesBox>
   <RadixThemesFlex align={`start`} css={{"position": "sticky", "background": "#171F26", "paddingInlineStart": "2em", "paddingInlineEnd": "2em", "paddingTop": "1em", "paddingBottom": "1em", "zIndex": "999", "top": "0", "flexDirection": "row"}} gap={`2`}>
   <RadixThemesBox css={{"fontFamily": "Comfortaa", "fontWeight": "500", "fontSize": "1.5em"}}>
@@ -67,27 +167,15 @@ export default function Component() {
   {`Pablo GS`}
 </RadixThemesHeading>
   <RadixThemesText as={`p`} css={{"marginTop": "0!important", "color": "#14A1F0"}}>
-  {`@ansuzgs`}
+  {`@ansuz_gs`}
 </RadixThemesText>
   <RadixThemesText as={`p`} css={{"marginTop": "0!important", "color": "#C3C7CB"}}>
   {`Software Developer`}
 </RadixThemesText>
   <RadixThemesFlex align={`start`} css={{"flexDirection": "row"}} gap={`2`}>
-  <RadixThemesLink asChild={true} css={{"color": "#C3C7CB", "textDecoration": "none", "&:hover": null}}>
-  <NextLink css={{"isExternal": true}} href={`https://twitter.com`} passHref={true}>
-  <LucideLinkIcon css={{"color": "var(--current-color)"}}/>
-</NextLink>
-</RadixThemesLink>
-  <RadixThemesLink asChild={true} css={{"color": "#C3C7CB", "textDecoration": "none", "&:hover": null}}>
-  <NextLink css={{"isExternal": true}} href={`https://youtube.com`} passHref={true}>
-  <LucideLinkIcon css={{"color": "var(--current-color)"}}/>
-</NextLink>
-</RadixThemesLink>
-  <RadixThemesLink asChild={true} css={{"color": "#C3C7CB", "textDecoration": "none", "&:hover": null}}>
-  <NextLink css={{"isExternal": true}} href={`https://google.com`} passHref={true}>
-  <LucideLinkIcon css={{"color": "var(--current-color)"}}/>
-</NextLink>
-</RadixThemesLink>
+  <Link_7d2b5bab88c22b20aeb7948a8557ca4b/>
+  <Link_625e8f976c08324020a7458997310f22/>
+  <Link_d0cbaff8825b41e853e577157426b615/>
 </RadixThemesFlex>
 </RadixThemesFlex>
 </RadixThemesFlex>
@@ -123,218 +211,26 @@ export default function Component() {
   <RadixThemesHeading css={{"width": "100%", "paddingTop": "1em", "fontSize": "1.5em", "color": "#F1F2F4", "fontFamily": "Poppins", "fontWeight": "500"}}>
   {`Comunidad`}
 </RadixThemesHeading>
-  <RadixThemesLink asChild={true} css={{"color": "#C3C7CB", "textDecoration": "none", "&:hover": null}}>
-  <NextLink css={{"isExternal": true, "width": "100%"}} href={`https://www.twitch.tv`} passHref={true}>
-  <RadixThemesButton css={{"width": "100%", "height": "100%", "padding": "0.5em", "borderRadius": "1em", "color": "#F1F2F4", "backgroundColor": "#171F26", "whiteSpace": "normal", "textAlign": "start", "&:hover": {"backgroundColor": "#087ec4"}}}>
-  <RadixThemesFlex align={`start`} css={{"alignItems": "center", "width": "100%", "flexDirection": "row"}} gap={`2`}>
-  <LucideArrowRightIcon css={{"color": "var(--current-color)", "width": "2em", "height": "2em", "margin": "0.8em"}}/>
-  <RadixThemesFlex align={`start`} css={{"alignItems": "start", "paddingTop": "0.5em", "paddingBottom": "0.5em", "paddingRight": "0.5em", "flexDirection": "column"}} gap={`1`}>
-  <RadixThemesText as={`p`} css={{"fontFamily": "Poppins", "fontWeight": "500", "color": "#F1F2F4"}} size={`3`}>
-  {`Twitch`}
-</RadixThemesText>
-  <RadixThemesText as={`p`} css={{"fontWeight": "300", "color": "#C3C7CB"}} size={`1`}>
-  {`Directos de lunes a viernes`}
-</RadixThemesText>
-</RadixThemesFlex>
-</RadixThemesFlex>
-</RadixThemesButton>
-</NextLink>
-</RadixThemesLink>
-  <RadixThemesLink asChild={true} css={{"color": "#C3C7CB", "textDecoration": "none", "&:hover": null}}>
-  <NextLink css={{"isExternal": true, "width": "100%"}} href={`https://www.youtube.com`} passHref={true}>
-  <RadixThemesButton css={{"width": "100%", "height": "100%", "padding": "0.5em", "borderRadius": "1em", "color": "#F1F2F4", "backgroundColor": "#171F26", "whiteSpace": "normal", "textAlign": "start", "&:hover": {"backgroundColor": "#087ec4"}}}>
-  <RadixThemesFlex align={`start`} css={{"alignItems": "center", "width": "100%", "flexDirection": "row"}} gap={`2`}>
-  <LucideArrowRightIcon css={{"color": "var(--current-color)", "width": "2em", "height": "2em", "margin": "0.8em"}}/>
-  <RadixThemesFlex align={`start`} css={{"alignItems": "start", "paddingTop": "0.5em", "paddingBottom": "0.5em", "paddingRight": "0.5em", "flexDirection": "column"}} gap={`1`}>
-  <RadixThemesText as={`p`} css={{"fontFamily": "Poppins", "fontWeight": "500", "color": "#F1F2F4"}} size={`3`}>
-  {`Youtube`}
-</RadixThemesText>
-  <RadixThemesText as={`p`} css={{"fontWeight": "300", "color": "#C3C7CB"}} size={`1`}>
-  {`Tutoriales semanales`}
-</RadixThemesText>
-</RadixThemesFlex>
-</RadixThemesFlex>
-</RadixThemesButton>
-</NextLink>
-</RadixThemesLink>
-  <RadixThemesLink asChild={true} css={{"color": "#C3C7CB", "textDecoration": "none", "&:hover": null}}>
-  <NextLink css={{"isExternal": true, "width": "100%"}} href={`https://www.instagram.com`} passHref={true}>
-  <RadixThemesButton css={{"width": "100%", "height": "100%", "padding": "0.5em", "borderRadius": "1em", "color": "#F1F2F4", "backgroundColor": "#171F26", "whiteSpace": "normal", "textAlign": "start", "&:hover": {"backgroundColor": "#087ec4"}}}>
-  <RadixThemesFlex align={`start`} css={{"alignItems": "center", "width": "100%", "flexDirection": "row"}} gap={`2`}>
-  <LucideArrowRightIcon css={{"color": "var(--current-color)", "width": "2em", "height": "2em", "margin": "0.8em"}}/>
-  <RadixThemesFlex align={`start`} css={{"alignItems": "start", "paddingTop": "0.5em", "paddingBottom": "0.5em", "paddingRight": "0.5em", "flexDirection": "column"}} gap={`1`}>
-  <RadixThemesText as={`p`} css={{"fontFamily": "Poppins", "fontWeight": "500", "color": "#F1F2F4"}} size={`3`}>
-  {`Instagram`}
-</RadixThemesText>
-  <RadixThemesText as={`p`} css={{"fontWeight": "300", "color": "#C3C7CB"}} size={`1`}>
-  {`Fotos nuevas cada semana`}
-</RadixThemesText>
-</RadixThemesFlex>
-</RadixThemesFlex>
-</RadixThemesButton>
-</NextLink>
-</RadixThemesLink>
-  <RadixThemesLink asChild={true} css={{"color": "#C3C7CB", "textDecoration": "none", "&:hover": null}}>
-  <NextLink css={{"isExternal": true, "width": "100%"}} href={`https://www.linkedin.com`} passHref={true}>
-  <RadixThemesButton css={{"width": "100%", "height": "100%", "padding": "0.5em", "borderRadius": "1em", "color": "#F1F2F4", "backgroundColor": "#171F26", "whiteSpace": "normal", "textAlign": "start", "&:hover": {"backgroundColor": "#087ec4"}}}>
-  <RadixThemesFlex align={`start`} css={{"alignItems": "center", "width": "100%", "flexDirection": "row"}} gap={`2`}>
-  <LucideArrowRightIcon css={{"color": "var(--current-color)", "width": "2em", "height": "2em", "margin": "0.8em"}}/>
-  <RadixThemesFlex align={`start`} css={{"alignItems": "start", "paddingTop": "0.5em", "paddingBottom": "0.5em", "paddingRight": "0.5em", "flexDirection": "column"}} gap={`1`}>
-  <RadixThemesText as={`p`} css={{"fontFamily": "Poppins", "fontWeight": "500", "color": "#F1F2F4"}} size={`3`}>
-  {`LinkedIn`}
-</RadixThemesText>
-  <RadixThemesText as={`p`} css={{"fontWeight": "300", "color": "#C3C7CB"}} size={`1`}>
-  {`Curriculum actualizado`}
-</RadixThemesText>
-</RadixThemesFlex>
-</RadixThemesFlex>
-</RadixThemesButton>
-</NextLink>
-</RadixThemesLink>
+  <Link_3fc96456b8e52f86388fc39bf4945ffa/>
+  <Link_16bc9eb6d7c1a33a357d894b7d80ba29/>
+  <Link_f2d73f8d04b6bdf91e717d041b238631/>
+  <Link_e9b3350d880b0721e1aedab1dacfd6a9/>
   <RadixThemesHeading css={{"width": "100%", "paddingTop": "1em", "fontSize": "1.5em", "color": "#F1F2F4", "fontFamily": "Poppins", "fontWeight": "500"}}>
   {`Comunidad`}
 </RadixThemesHeading>
-  <RadixThemesLink asChild={true} css={{"color": "#C3C7CB", "textDecoration": "none", "&:hover": null}}>
-  <NextLink css={{"isExternal": true, "width": "100%"}} href={`https://www.twitch.tv`} passHref={true}>
-  <RadixThemesButton css={{"width": "100%", "height": "100%", "padding": "0.5em", "borderRadius": "1em", "color": "#F1F2F4", "backgroundColor": "#171F26", "whiteSpace": "normal", "textAlign": "start", "&:hover": {"backgroundColor": "#087ec4"}}}>
-  <RadixThemesFlex align={`start`} css={{"alignItems": "center", "width": "100%", "flexDirection": "row"}} gap={`2`}>
-  <LucideArrowRightIcon css={{"color": "var(--current-color)", "width": "2em", "height": "2em", "margin": "0.8em"}}/>
-  <RadixThemesFlex align={`start`} css={{"alignItems": "start", "paddingTop": "0.5em", "paddingBottom": "0.5em", "paddingRight": "0.5em", "flexDirection": "column"}} gap={`1`}>
-  <RadixThemesText as={`p`} css={{"fontFamily": "Poppins", "fontWeight": "500", "color": "#F1F2F4"}} size={`3`}>
-  {`Twitch`}
-</RadixThemesText>
-  <RadixThemesText as={`p`} css={{"fontWeight": "300", "color": "#C3C7CB"}} size={`1`}>
-  {`Directos de lunes a viernes`}
-</RadixThemesText>
-</RadixThemesFlex>
-</RadixThemesFlex>
-</RadixThemesButton>
-</NextLink>
-</RadixThemesLink>
-  <RadixThemesLink asChild={true} css={{"color": "#C3C7CB", "textDecoration": "none", "&:hover": null}}>
-  <NextLink css={{"isExternal": true, "width": "100%"}} href={`https://www.youtube.com`} passHref={true}>
-  <RadixThemesButton css={{"width": "100%", "height": "100%", "padding": "0.5em", "borderRadius": "1em", "color": "#F1F2F4", "backgroundColor": "#171F26", "whiteSpace": "normal", "textAlign": "start", "&:hover": {"backgroundColor": "#087ec4"}}}>
-  <RadixThemesFlex align={`start`} css={{"alignItems": "center", "width": "100%", "flexDirection": "row"}} gap={`2`}>
-  <LucideArrowRightIcon css={{"color": "var(--current-color)", "width": "2em", "height": "2em", "margin": "0.8em"}}/>
-  <RadixThemesFlex align={`start`} css={{"alignItems": "start", "paddingTop": "0.5em", "paddingBottom": "0.5em", "paddingRight": "0.5em", "flexDirection": "column"}} gap={`1`}>
-  <RadixThemesText as={`p`} css={{"fontFamily": "Poppins", "fontWeight": "500", "color": "#F1F2F4"}} size={`3`}>
-  {`Youtube`}
-</RadixThemesText>
-  <RadixThemesText as={`p`} css={{"fontWeight": "300", "color": "#C3C7CB"}} size={`1`}>
-  {`Tutoriales semanales`}
-</RadixThemesText>
-</RadixThemesFlex>
-</RadixThemesFlex>
-</RadixThemesButton>
-</NextLink>
-</RadixThemesLink>
-  <RadixThemesLink asChild={true} css={{"color": "#C3C7CB", "textDecoration": "none", "&:hover": null}}>
-  <NextLink css={{"isExternal": true, "width": "100%"}} href={`https://www.instagram.com`} passHref={true}>
-  <RadixThemesButton css={{"width": "100%", "height": "100%", "padding": "0.5em", "borderRadius": "1em", "color": "#F1F2F4", "backgroundColor": "#171F26", "whiteSpace": "normal", "textAlign": "start", "&:hover": {"backgroundColor": "#087ec4"}}}>
-  <RadixThemesFlex align={`start`} css={{"alignItems": "center", "width": "100%", "flexDirection": "row"}} gap={`2`}>
-  <LucideArrowRightIcon css={{"color": "var(--current-color)", "width": "2em", "height": "2em", "margin": "0.8em"}}/>
-  <RadixThemesFlex align={`start`} css={{"alignItems": "start", "paddingTop": "0.5em", "paddingBottom": "0.5em", "paddingRight": "0.5em", "flexDirection": "column"}} gap={`1`}>
-  <RadixThemesText as={`p`} css={{"fontFamily": "Poppins", "fontWeight": "500", "color": "#F1F2F4"}} size={`3`}>
-  {`Instagram`}
-</RadixThemesText>
-  <RadixThemesText as={`p`} css={{"fontWeight": "300", "color": "#C3C7CB"}} size={`1`}>
-  {`Fotos nuevas cada semana`}
-</RadixThemesText>
-</RadixThemesFlex>
-</RadixThemesFlex>
-</RadixThemesButton>
-</NextLink>
-</RadixThemesLink>
-  <RadixThemesLink asChild={true} css={{"color": "#C3C7CB", "textDecoration": "none", "&:hover": null}}>
-  <NextLink css={{"isExternal": true, "width": "100%"}} href={`https://www.linkedin.com`} passHref={true}>
-  <RadixThemesButton css={{"width": "100%", "height": "100%", "padding": "0.5em", "borderRadius": "1em", "color": "#F1F2F4", "backgroundColor": "#171F26", "whiteSpace": "normal", "textAlign": "start", "&:hover": {"backgroundColor": "#087ec4"}}}>
-  <RadixThemesFlex align={`start`} css={{"alignItems": "center", "width": "100%", "flexDirection": "row"}} gap={`2`}>
-  <LucideArrowRightIcon css={{"color": "var(--current-color)", "width": "2em", "height": "2em", "margin": "0.8em"}}/>
-  <RadixThemesFlex align={`start`} css={{"alignItems": "start", "paddingTop": "0.5em", "paddingBottom": "0.5em", "paddingRight": "0.5em", "flexDirection": "column"}} gap={`1`}>
-  <RadixThemesText as={`p`} css={{"fontFamily": "Poppins", "fontWeight": "500", "color": "#F1F2F4"}} size={`3`}>
-  {`LinkedIn`}
-</RadixThemesText>
-  <RadixThemesText as={`p`} css={{"fontWeight": "300", "color": "#C3C7CB"}} size={`1`}>
-  {`Curriculum actualizado`}
-</RadixThemesText>
-</RadixThemesFlex>
-</RadixThemesFlex>
-</RadixThemesButton>
-</NextLink>
-</RadixThemesLink>
+  <Link_3fc96456b8e52f86388fc39bf4945ffa/>
+  <Link_16bc9eb6d7c1a33a357d894b7d80ba29/>
+  <Link_f2d73f8d04b6bdf91e717d041b238631/>
+  <Link_e9b3350d880b0721e1aedab1dacfd6a9/>
   <RadixThemesHeading css={{"width": "100%", "paddingTop": "1em", "fontSize": "1.5em", "color": "#F1F2F4", "fontFamily": "Poppins", "fontWeight": "500"}}>
   {`Comunidad`}
 </RadixThemesHeading>
-  <RadixThemesLink asChild={true} css={{"color": "#C3C7CB", "textDecoration": "none", "&:hover": null}}>
-  <NextLink css={{"isExternal": true, "width": "100%"}} href={`https://www.twitch.tv`} passHref={true}>
-  <RadixThemesButton css={{"width": "100%", "height": "100%", "padding": "0.5em", "borderRadius": "1em", "color": "#F1F2F4", "backgroundColor": "#171F26", "whiteSpace": "normal", "textAlign": "start", "&:hover": {"backgroundColor": "#087ec4"}}}>
-  <RadixThemesFlex align={`start`} css={{"alignItems": "center", "width": "100%", "flexDirection": "row"}} gap={`2`}>
-  <LucideArrowRightIcon css={{"color": "var(--current-color)", "width": "2em", "height": "2em", "margin": "0.8em"}}/>
-  <RadixThemesFlex align={`start`} css={{"alignItems": "start", "paddingTop": "0.5em", "paddingBottom": "0.5em", "paddingRight": "0.5em", "flexDirection": "column"}} gap={`1`}>
-  <RadixThemesText as={`p`} css={{"fontFamily": "Poppins", "fontWeight": "500", "color": "#F1F2F4"}} size={`3`}>
-  {`Twitch`}
-</RadixThemesText>
-  <RadixThemesText as={`p`} css={{"fontWeight": "300", "color": "#C3C7CB"}} size={`1`}>
-  {`Directos de lunes a viernes`}
-</RadixThemesText>
+  <Link_3fc96456b8e52f86388fc39bf4945ffa/>
+  <Link_16bc9eb6d7c1a33a357d894b7d80ba29/>
+  <Link_f2d73f8d04b6bdf91e717d041b238631/>
+  <Link_e9b3350d880b0721e1aedab1dacfd6a9/>
 </RadixThemesFlex>
-</RadixThemesFlex>
-</RadixThemesButton>
-</NextLink>
-</RadixThemesLink>
-  <RadixThemesLink asChild={true} css={{"color": "#C3C7CB", "textDecoration": "none", "&:hover": null}}>
-  <NextLink css={{"isExternal": true, "width": "100%"}} href={`https://www.youtube.com`} passHref={true}>
-  <RadixThemesButton css={{"width": "100%", "height": "100%", "padding": "0.5em", "borderRadius": "1em", "color": "#F1F2F4", "backgroundColor": "#171F26", "whiteSpace": "normal", "textAlign": "start", "&:hover": {"backgroundColor": "#087ec4"}}}>
-  <RadixThemesFlex align={`start`} css={{"alignItems": "center", "width": "100%", "flexDirection": "row"}} gap={`2`}>
-  <LucideArrowRightIcon css={{"color": "var(--current-color)", "width": "2em", "height": "2em", "margin": "0.8em"}}/>
-  <RadixThemesFlex align={`start`} css={{"alignItems": "start", "paddingTop": "0.5em", "paddingBottom": "0.5em", "paddingRight": "0.5em", "flexDirection": "column"}} gap={`1`}>
-  <RadixThemesText as={`p`} css={{"fontFamily": "Poppins", "fontWeight": "500", "color": "#F1F2F4"}} size={`3`}>
-  {`Youtube`}
-</RadixThemesText>
-  <RadixThemesText as={`p`} css={{"fontWeight": "300", "color": "#C3C7CB"}} size={`1`}>
-  {`Tutoriales semanales`}
-</RadixThemesText>
-</RadixThemesFlex>
-</RadixThemesFlex>
-</RadixThemesButton>
-</NextLink>
-</RadixThemesLink>
-  <RadixThemesLink asChild={true} css={{"color": "#C3C7CB", "textDecoration": "none", "&:hover": null}}>
-  <NextLink css={{"isExternal": true, "width": "100%"}} href={`https://www.instagram.com`} passHref={true}>
-  <RadixThemesButton css={{"width": "100%", "height": "100%", "padding": "0.5em", "borderRadius": "1em", "color": "#F1F2F4", "backgroundColor": "#171F26", "whiteSpace": "normal", "textAlign": "start", "&:hover": {"backgroundColor": "#087ec4"}}}>
-  <RadixThemesFlex align={`start`} css={{"alignItems": "center", "width": "100%", "flexDirection": "row"}} gap={`2`}>
-  <LucideArrowRightIcon css={{"color": "var(--current-color)", "width": "2em", "height": "2em", "margin": "0.8em"}}/>
-  <RadixThemesFlex align={`start`} css={{"alignItems": "start", "paddingTop": "0.5em", "paddingBottom": "0.5em", "paddingRight": "0.5em", "flexDirection": "column"}} gap={`1`}>
-  <RadixThemesText as={`p`} css={{"fontFamily": "Poppins", "fontWeight": "500", "color": "#F1F2F4"}} size={`3`}>
-  {`Instagram`}
-</RadixThemesText>
-  <RadixThemesText as={`p`} css={{"fontWeight": "300", "color": "#C3C7CB"}} size={`1`}>
-  {`Fotos nuevas cada semana`}
-</RadixThemesText>
-</RadixThemesFlex>
-</RadixThemesFlex>
-</RadixThemesButton>
-</NextLink>
-</RadixThemesLink>
-  <RadixThemesLink asChild={true} css={{"color": "#C3C7CB", "textDecoration": "none", "&:hover": null}}>
-  <NextLink css={{"isExternal": true, "width": "100%"}} href={`https://www.linkedin.com`} passHref={true}>
-  <RadixThemesButton css={{"width": "100%", "height": "100%", "padding": "0.5em", "borderRadius": "1em", "color": "#F1F2F4", "backgroundColor": "#171F26", "whiteSpace": "normal", "textAlign": "start", "&:hover": {"backgroundColor": "#087ec4"}}}>
-  <RadixThemesFlex align={`start`} css={{"alignItems": "center", "width": "100%", "flexDirection": "row"}} gap={`2`}>
-  <LucideArrowRightIcon css={{"color": "var(--current-color)", "width": "2em", "height": "2em", "margin": "0.8em"}}/>
-  <RadixThemesFlex align={`start`} css={{"alignItems": "start", "paddingTop": "0.5em", "paddingBottom": "0.5em", "paddingRight": "0.5em", "flexDirection": "column"}} gap={`1`}>
-  <RadixThemesText as={`p`} css={{"fontFamily": "Poppins", "fontWeight": "500", "color": "#F1F2F4"}} size={`3`}>
-  {`LinkedIn`}
-</RadixThemesText>
-  <RadixThemesText as={`p`} css={{"fontWeight": "300", "color": "#C3C7CB"}} size={`1`}>
-  {`Curriculum actualizado`}
-</RadixThemesText>
-</RadixThemesFlex>
-</RadixThemesFlex>
-</RadixThemesButton>
-</NextLink>
-</RadixThemesLink>
-</RadixThemesFlex>
-  <RadixThemesFlex align={`start`} css={{"marginBottom": "2em", "paddingBottom": "2em", "flexDirection": "column"}} gap={`2`}>
+  <RadixThemesFlex align={`start`} css={{"marginBottom": "2em", "paddingBottom": "2em", "paddingInlineStart": "2em", "paddingInlineEnd": "2em", "flexDirection": "column"}} gap={`4`}>
   <img src={`favicon.ico`}/>
   <RadixThemesText as={`p`} css={{"fontSize": "0.8em", "color": "#A3ABB2"}}>
   {`PGS © 2024 Reflex Inc.`}

@@ -1,12 +1,9 @@
-from logging import info
-from turtle import width
 import reflex as rx
 from python_web.components.link_icon import link_icon
 from python_web.components.info_text import info_text
 from python_web.styles.styles import Size as Size, Spacing
 from python_web.styles.styles import TextColor as TextColor
 from python_web.styles.colors import Color as Color
-from python_web.styles.fonts import Font as Font
 
 
 def header() -> rx.Component:
@@ -16,7 +13,7 @@ def header() -> rx.Component:
             rx.vstack(
                 rx.heading("Pablo GS", size=Spacing.BIG.value),
                 rx.text(
-                    "@ansuzgs",
+                    "@ansuz_gs",
                     margin_top=Size.ZERO.value,
                     color=Color.PRIMARY.value,
                 ),

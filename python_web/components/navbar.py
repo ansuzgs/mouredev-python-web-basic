@@ -1,4 +1,3 @@
-from turtle import color
 import reflex as rx
 from python_web.styles.styles import Size as Size
 from python_web.styles.styles import TextColor as TextColor

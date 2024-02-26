@@ -6,8 +6,8 @@ from python_web.components.footer import footer
 import python_web.styles.styles as styles
 
 
-class State(rx.State):
-    pass
+# class State(rx.State):
+#    pass
 
 
 def index() -> rx.Component:
