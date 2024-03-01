@@ -3,15 +3,22 @@ from python_web.styles.styles import Size as Size
 from python_web.styles.styles import TextColor as TextColor
 from python_web.styles.styles import Color as Color
 import python_web.styles.styles as styles
+from python_web.routes import Route
+from python_web.components.ant_components import float_button
+import python_web.constants as constants
 
 
 def navbar() -> rx.Component:
     return rx.hstack(
-        rx.box(
-            rx.text("Pablo", as_="span", color=Color.PRIMARY.value),
-            rx.text("GS", as_="span", color=Color.SECONDARY.value),
-            style=styles.navbar_title_style,
+        rx.link(
+            rx.box(
+                rx.text("Pablo", as_="span", color=Color.PRIMARY.value),
+                rx.text("GS", as_="span", color=Color.SECONDARY.value),
+                style=styles.navbar_title_style,
+            ),
+            href=Route.INDEX.value,
         ),
+        float_button(icon=rx.Image(src="/icons/donate.svg"), href=constants.COFFEE_URL),
         position="sticky",
         bg=Color.CONTENT.value,
         padding_x=Size.BIG.value,

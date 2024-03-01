@@ -40,13 +40,13 @@ class Spacing(Enum):
 BASE_STYLE = {
     "font_family": Font.DEFAULT.value,
     "font_weight": FontWeight.LIGHT.value,
-    "background_color": Color.BACKGROUND.value,
-    rx.heading: {
+    "background": Color.BACKGROUND.value,
+    rx.Heading: {
         "color": TextColor.HEADER.value,
         "font_family": Font.TITLE.value,
         "font_weight": FontWeight.MEDIUM.value,
     },
-    rx.button: {
+    rx.Button: {
         "width": "100%",
         "height": "100%",
         "padding": Size.SMALL.value,
@@ -57,7 +57,7 @@ BASE_STYLE = {
         "text_align": "start",
         "_hover": {"background_color": Color.SECONDARY.value},
     },
-    rx.link: {
+    rx.Link: {
         "color": TextColor.BODY.value,
         "text_decoration": "none",
         "_hover": {},
