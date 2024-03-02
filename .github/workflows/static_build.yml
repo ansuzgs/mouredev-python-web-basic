@@ -1,0 +1,34 @@
+name: Static build
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    if: github.repository == 'ansuzgs/mouredev-python-web-basic'
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run build script
+        run: ./remote_build.sh
+
+      - name: Commit and push changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: Update static build
+          commit_user_name: Pablo GS [Github Actions]
+          commit_user_email: ansuz.gs@gmail.com
+          commit_author: ansuzgs <ansuz.gs@gmail.com>
