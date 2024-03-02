@@ -1,11 +1,13 @@
 import reflex as rx
+
+import python_web.styles.styles as styles
 import python_web.utils as utils
+from python_web.components.footer import footer
 from python_web.components.navbar import navbar
+from python_web.routes import Route
 from python_web.views.header import header
 from python_web.views.index_links import index_links
-from python_web.components.footer import footer
-import python_web.styles.styles as styles
-from python_web.routes import Route
+from python_web.state.PageState import PageState
 
 
 @rx.page(
@@ -14,6 +16,7 @@ from python_web.routes import Route
     description=utils.index_description,
     image=utils.preview,
     meta=utils.index_meta,
+    on_load=[PageState.check_live, PageState.featured_links],
 )
 def index() -> rx.Component:
     return rx.box(
@@ -21,7 +24,7 @@ def index() -> rx.Component:
         navbar(),
         rx.center(
             rx.vstack(
-                header(),
+                header(live=PageState.is_live, live_title=PageState.live_title),
                 index_links(),
                 footer(),
                 max_width=styles.MAX_WIDTH,

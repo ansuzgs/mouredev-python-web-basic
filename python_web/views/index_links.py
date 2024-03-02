@@ -39,6 +39,23 @@ def index_links() -> rx.Component:
             "/icons/linkedin.svg",
             constants.LINKEDIN_URL,
         ),
+        # rx.cond(
+        #     len(featured) > 0,
+        #     rx.vstack(
+        #         title("Destacado"),
+        #         rx.foreach(
+        #             featured,
+        #             lambda item: rx.responsive_grid(
+        #                 rx.link(
+        #                     rx.image(src=item["image"]),
+        #                     rx.text(item["title"]),
+        #                     href=item["url"],
+        #                     is_external=True,
+        #                 )
+        #             ),
+        #         ),
+        #     ),
+        # ),
         title("Comunidad"),
         link_button(
             "Twitch",
