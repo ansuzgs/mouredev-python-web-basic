@@ -1,11 +1,8 @@
 *.db
 *.py[cod]
 .env
+.venv/
+.vscode
 .web
 .web/
-.venv/
 __pycache__/
-.web
-.web
-.vscode
-.vscode

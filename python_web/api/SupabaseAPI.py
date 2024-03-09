@@ -1,6 +1,7 @@
 import os
 import dotenv
 from supabase import create_client, Client
+from python_web.model.Featured import Featured
 
 
 class SupabaseAPI:
@@ -17,7 +18,7 @@ class SupabaseAPI:
         if self.supabase is None:
             self.supabase = create_client(self.SUPABASE_URL, self.SUPABASE_KEY)
 
-    def featured(self) -> list:
+    def featured(self) -> list[Featured]:
         if self.supabase is None:
             self.generate_client()
         response = self.supabase.table("featured").select("*").execute()
@@ -25,8 +26,14 @@ class SupabaseAPI:
         featured_data = []
 
         if len(response.data) > 0:
-            for feature_item in response.data:
-                featured_data.append(feature_item)
+            for featured_item in response.data:
+                featured_data.append(
+                    Featured(
+                        title=featured_item["title"],
+                        image=featured_item["image"],
+                        url=featured_item["url"],
+                    )
+                )
 
         print(featured_data)
 

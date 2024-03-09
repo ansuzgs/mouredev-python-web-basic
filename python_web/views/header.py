@@ -6,53 +6,85 @@ from python_web.components.info_text import info_text
 from python_web.styles.styles import Size as Size, Spacing
 from python_web.styles.styles import TextColor as TextColor
 from python_web.styles.colors import Color as Color
+from python_web.model.Live import Live
+from python_web.state.PageState import PageState
 
 
-def header(details=True, live=False, live_title="") -> rx.Component:
+def header(details=True) -> rx.Component:
     return rx.vstack(
         rx.hstack(
-            rx.avatar(
+            rx.box(
                 rx.cond(
-                    live,
+                    PageState.live.live,
                     rx.link(
-                        rx.avatar_badge(
-                            rx.image(src="/icons/twitch.svg"),
-                            bg=Color.PURPLE.value,
-                            border_color=Color.PURPLE.value,
-                            class_name="blink",
+                        rx.image(
+                            src="/icons/twitch.svg",
+                            height=Size.DEFAULT.value,
+                            width=Size.DEFAULT.value,
                         ),
+                        bg=Color.PURPLE.value,
+                        border_color=Color.PURPLE.value,
+                        class_name="blink",
                         href=constants.TWITCH_URL,
+                        is_external=True,
+                        border_radius="50%",
+                        padding=Size.SMALL.value,
+                        position="absolute",
+                        bottom="0",
+                        right="0",
                     ),
                 ),
-                name="Pablo GS",
-                fallback="PGS",
-                size="xl",
-                color=TextColor.BODY.value,
-                bg=Color.CONTENT.value,
-                padding="2px",
-                border="4px",
-                border_color=Color.PRIMARY.value,
+                rx.avatar(
+                    name="Pablo GS",
+                    size=Spacing.MEDIUM_BIG.value,
+                    src="/favicon.ico",
+                    radius="full",
+                    color=TextColor.BODY.value,
+                    bg=Color.CONTENT.value,
+                    padding="2px",
+                    border=f"4px solid {Color.PRIMARY.value}",
+                ),
+                position="relative",
             ),
             rx.vstack(
-                rx.heading("Pablo GS", size="md"),
+                rx.heading(
+                    "Pablo GS",
+                    size=Spacing.BIG.value,
+                ),
                 rx.text(
                     "@ansuz_gs",
                     margin_top=Size.ZERO.value,
                     color=Color.PRIMARY.value,
                 ),
-                rx.text(
-                    "Software Developer",
-                    margin_top=Size.ZERO.value,
-                    color=TextColor.BODY.value,
-                ),
                 rx.hstack(
-                    link_icon("https://twitter.com"),
-                    link_icon("https://youtube.com"),
-                    link_icon("https://google.com"),
+                    link_icon(
+                        "/icons/github.svg",
+                        constants.GITHUB_URL,
+                        "GitHub",
+                    ),
+                    link_icon(
+                        "/icons/x.svg",
+                        constants.TWITTER_URL,
+                        "Twitter/X",
+                    ),
+                    link_icon(
+                        "/icons/instagram.svg",
+                        constants.INSTAGRAM_URL,
+                        "Instagram",
+                    ),
+                    link_icon(
+                        "/icons/linkedin.svg",
+                        constants.LINKEDIN_URL,
+                        "Linkedin",
+                    ),
+                    spacing=Spacing.LARGE.value,
+                    padding_top=Size.SMALL.value,
                 ),
-                align_items="left",
+                spacing=Spacing.ZERO.value,
+                align_items="start",
             ),
-            spacing="5",
+            align="end",
+            spacing=Spacing.DEFAULT.value,
         ),
         rx.flex(
             info_text("+2", "Años de experiencia"),
@@ -63,10 +95,30 @@ def header(details=True, live=False, live_title="") -> rx.Component:
             width="100%",
         ),
         rx.cond(
-            live,
+            PageState.live.live,
             link_button(
-                "En directo", live_title, "/icons/twitch.svg", constants.TWITCH_URL
+                "En directo",
+                PageState.live.title,
+                "/icons/twitch.svg",
+                constants.TWITCH_URL,
+                highlight_color=Color.PURPLE.value,
+                animated=True,
             ),
+        ),
+        rx.box(
+            rx.cond(
+                PageState.next_live,
+                link_button(
+                    "Proximo directo",
+                    PageState.next_live,
+                    "/icons/twitch.svg",
+                    constants.TWITCH_URL,
+                    highlight_color=Color.PURPLE.value,
+                    animated=True,
+                ),
+            ),
+            width="100%",
+            on_mount=PageState.check_schedule,
         ),
         rx.cond(
             details,
@@ -77,6 +129,8 @@ def header(details=True, live=False, live_title="") -> rx.Component:
                 color=TextColor.BODY.value,
             ),
         ),
-        spacing="5",
-        align_items="left",
+        width="100%",
+        spacing=Spacing.BIG.value,
+        align_items="start",
+        on_mount=PageState.check_live,
     )

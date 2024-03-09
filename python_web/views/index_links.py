@@ -1,7 +1,12 @@
 import reflex as rx
+from python_web.state.PageState import PageState
+from python_web.styles.styles import Size, Spacing
+from python_web.styles.colors import Color
 from python_web.components.link_button import link_button
 from python_web.components.title import title
+from python_web.components.featured_link import featured_link
 import python_web.constants as constants
+from python_web.model.Featured import Featured
 from python_web.routes import Route
 
 
@@ -13,7 +18,8 @@ def index_links() -> rx.Component:
             "Consulta mis tutoriales para aprender programacion",
             "/icons/code.svg",
             Route.COURSES.value,
-            is_external=False,
+            False,
+            Color.SECONDARY.value,
         ),
         link_button(
             "Twitch",
@@ -39,23 +45,21 @@ def index_links() -> rx.Component:
             "/icons/linkedin.svg",
             constants.LINKEDIN_URL,
         ),
-        # rx.cond(
-        #     len(featured) > 0,
-        #     rx.vstack(
-        #         title("Destacado"),
-        #         rx.foreach(
-        #             featured,
-        #             lambda item: rx.responsive_grid(
-        #                 rx.link(
-        #                     rx.image(src=item["image"]),
-        #                     rx.text(item["title"]),
-        #                     href=item["url"],
-        #                     is_external=True,
-        #                 )
-        #             ),
-        #         ),
-        #     ),
-        # ),
+        rx.cond(
+            PageState.featured_info,
+            rx.vstack(
+                title("Destacado"),
+                rx.flex(
+                    rx.foreach(
+                        PageState.featured_info,
+                        featured_link,
+                    ),
+                    flex_direction=["column", "row"],
+                    spacing=Spacing.DEFAULT.value,
+                ),
+                spacing=Spacing.DEFAULT.value,
+            ),
+        ),
         title("Comunidad"),
         link_button(
             "Twitch",
@@ -82,5 +86,6 @@ def index_links() -> rx.Component:
             constants.LINKEDIN_URL,
         ),
         width="100%",
-        spacing="5",
+        spacing=Spacing.DEFAULT.value,
+        on_mount=PageState.featured_links,
     )

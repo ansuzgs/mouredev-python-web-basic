@@ -2,6 +2,7 @@ import reflex as rx
 from python_web.components.link_button import link_button
 from python_web.components.title import title
 import python_web.constants as constants
+from python_web.styles.styles import Size, Spacing
 
 
 def courses_links() -> rx.Component:
@@ -22,5 +23,5 @@ def courses_links() -> rx.Component:
             is_external=False,
         ),
         width="100%",
-        spacing="5",
+        spacing=Spacing.DEFAULT.value,
     )

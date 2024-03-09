@@ -15,7 +15,6 @@ from python_web.state.PageState import PageState
     description=utils.cursos_description,
     image=utils.preview,
     meta=utils.cursos_meta,
-    on_load=PageState.check_live,
 )
 def courses() -> rx.Component:
     return rx.box(
@@ -25,15 +24,14 @@ def courses() -> rx.Component:
             rx.vstack(
                 header(
                     details=False,
-                    live=PageState.is_live,
-                    live_title=PageState.live_title,
                 ),
                 courses_links(),
-                footer(),
+                # footer(),
                 max_width=styles.MAX_WIDTH,
                 width="100%",
                 margin_y=styles.Size.BIG.value,
                 padding=styles.Size.BIG.value,
-            )
+            ),
         ),
+        footer(),
     )

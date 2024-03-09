@@ -6,6 +6,8 @@ from .fonts import Font as Font, FontWeight
 
 # Constants
 MAX_WIDTH = "600px"
+FADEIN_ANIMATION = "animate__animated animate__fadeeIn"
+BOUNCEIN_ANIMATION = "animate__animated animate__boundeIn"
 
 
 STYLESHEETS = [
@@ -24,6 +26,7 @@ class Size(Enum):
     DEFAULT = "1em"
     LARGE = "1.5em"
     BIG = "2em"
+    VERY_BIG = "4em"
 
 
 class Spacing(Enum):
@@ -42,12 +45,12 @@ BASE_STYLE = {
     "font_family": Font.DEFAULT.value,
     "font_weight": FontWeight.LIGHT.value,
     "background": Color.BACKGROUND.value,
-    rx.Heading: {
+    rx.heading: {
         "color": TextColor.HEADER.value,
         "font_family": Font.TITLE.value,
         "font_weight": FontWeight.MEDIUM.value,
     },
-    rx.Button: {
+    rx.button: {
         "width": "100%",
         "height": "100%",
         "padding": Size.SMALL.value,
@@ -58,7 +61,7 @@ BASE_STYLE = {
         "text_align": "start",
         "_hover": {"background_color": Color.SECONDARY.value},
     },
-    rx.Link: {
+    rx.link: {
         "color": TextColor.BODY.value,
         "text_decoration": "none",
         "_hover": {},

@@ -18,7 +18,6 @@ def navbar() -> rx.Component:
             ),
             href=Route.INDEX.value,
         ),
-        float_button(icon=rx.Image(src="/icons/donate.svg"), href=constants.COFFEE_URL),
         position="sticky",
         bg=Color.CONTENT.value,
         padding_x=Size.BIG.value,
